@@ -1,6 +1,8 @@
 	APPARE0#.SAV FORMAT
-0x0:0x5 = Header + Event Flags? (00 00 01 05 93 B2 = Abashiri?, 00 00 03 0A 0C B0 = Sapporo?)
-0x6:0x8 = Shrine Maiden Location? (11 FC F8, 00 00 00)
+0x0:0x1 = Header? (00 00)
+0x2 = Shrine Maiden Location? (03 = Sapporo, 01 = Abashiri, 05 = Hakodate)
+0x3:0x5 = Event Flags? (05 93 B2 = Abashiri?, 0A 0C B0 = Sapporo?)
+0x6:0x8 = Event Flags? (11 FC F8, 00 00 00)
 0x400 = Slot1 CharacterID (00 = Empty, 01 = Gento, 02 = Benimaru, 06 = Goemon, etc.)
 0x404 = Slot1 Level
 0x408 = Slot1 MaxHP
@@ -695,6 +697,7 @@ AxA0E = Equip ID 14?
 	0xB55:0xB??? = ARMS
 0xB54 = Fingerless Gloves # Equip ID B7
 	= CHARM
-0xBAC:0xBAD = Gold (i.e.- 050A = 2,565 (5*1+10*256))
-0xBB0:0xBE3 = Shrine Maiden Location + Event Flags + Footer? (02 00 C5 09 11 00 0D 00 01 00 00 00 06 00 A0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 01 00 00 00 01 00 46 00 31 00 FF FF FF FF FF FF = Abashiri, 01 00 60 09 53 00 21 00 01 00 00 00 09 00 A0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 01 00 00 00 01 00 27 00 D1 00 D1 00 FF FF FF FF = Sapporo)
+0xBAC:0xBAE = Gold (i.e.- 050A00 = 2,565 (5*1+10*256), 7F9698 = 9,999,999 (15*1+7*16+6*256+9*4096+8*65536+9*1048576))
+0xBB0:0xBB8 = Shrine Maiden Location? (01 00 60 09 53 00 21 00 01 = Sapporo, 02 00 C5 09 11 00 0D 00 01 = Abashiri, 04 00 8C 0A 1E 00 0A 00 01 = Hakodate)
+0xBB9:0xBE3 = Shrine Maiden Location + Event Flags + Footer? (00 00 00 06 00 A0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 01 00 00 00 01 00 46 00 31 00 FF FF FF FF FF FF = Abashiri?, 00 00 00 09 00 A0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 01 00 00 00 01 00 27 00 D1 00 D1 00 FF FF FF FF = Sapporo)
 0xBE4:0xBE7 = Event Flags? Checksum Validator? (00 00 8C 01, 00 00 10 00, 00 00 02 00)
